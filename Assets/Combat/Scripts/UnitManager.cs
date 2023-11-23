@@ -9,7 +9,8 @@ public class UnitManager : MonoBehaviour
 
 
     public static UnitManager Instance { get; private set; }
-    public Menu menu;
+    [SerializeField]private Menu menu;
+    [SerializeField]private int enemiesCount;
 
     private List<Unit> unitList;
     private List<Unit> friendlyUnitList;
@@ -61,8 +62,9 @@ public class UnitManager : MonoBehaviour
 
         if (unit.IsEnemy())
         {
+            enemiesCount--;
             enemyUnitList.Remove(unit);
-            if(enemyUnitList.Count == 0)
+            if(enemyUnitList.Count == 0 && enemiesCount == 0)
             {
                 float temp = PlayerPrefs.GetFloat("material");
                 temp += 25;
@@ -83,10 +85,17 @@ public class UnitManager : MonoBehaviour
         else
         {
             friendlyUnitList.Remove(unit);
+
             if (friendlyUnitList.Count == 0)
             {
                 menu.ChangeScene("TownScene");
             }
+            if (unit == UnitActionSystem.Instance.GetSelectedUnit())
+            {
+                Unit newSelectedUnit = friendlyUnitList[0];
+                UnitActionSystem.Instance.SetSelectedUnit(newSelectedUnit);
+            }
+            
         }
     }
 
