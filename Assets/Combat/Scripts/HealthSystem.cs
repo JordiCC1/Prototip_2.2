@@ -9,13 +9,16 @@ public class HealthSystem : MonoBehaviour
     public event EventHandler OnDead;
     public event EventHandler OnDamaged;
 
-    [SerializeField] private int health = 100 + +PlayerPrefs.GetInt("healthBonus");
+    [SerializeField] private int health = 100;
     private int healthMax;
 
     private void Awake()
     {
-        healthMax = health;
+        healthMax = health + PlayerPrefs.GetInt("healthBonus");
+        health += PlayerPrefs.GetInt("healthBonus");
     }
+
+    
     public void Damage(int damageAmount)
     {
         health -= damageAmount;
