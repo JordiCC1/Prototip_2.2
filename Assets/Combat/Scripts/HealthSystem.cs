@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
@@ -10,12 +12,22 @@ public class HealthSystem : MonoBehaviour
     public event EventHandler OnDamaged;
 
     [SerializeField] private int health = 100;
+    [SerializeField] private Unit unit;
     private int healthMax;
+
 
     private void Awake()
     {
-        healthMax = health + PlayerPrefs.GetInt("healthBonus");
-        health += PlayerPrefs.GetInt("healthBonus");
+        if (!unit.IsEnemy())
+        { 
+            health += PlayerPrefs.GetInt("healthBonus");
+            healthMax = health;
+        }
+        else
+        {
+            healthMax = health;
+        }
+    
     }
 
     

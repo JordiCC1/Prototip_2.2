@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 60
+  unit: {fileID: 5153786764167368597}
 --- !u!114 &6470236495852996830
 MonoBehaviour:
   m_ObjectHideFlags: 0
