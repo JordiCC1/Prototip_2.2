@@ -78,8 +78,8 @@ public class UnitManager : MonoBehaviour
                 temp += 20;
                 PlayerPrefs.SetFloat("food", temp);
 
-
-                menu.ChangeScene("TownScene");
+                StartCoroutine("WaitToYouWin");
+                //menu.ChangeScene("TownScene");
             }
         }
         else
@@ -88,7 +88,8 @@ public class UnitManager : MonoBehaviour
 
             if (friendlyUnitList.Count == 0)
             {
-                menu.ChangeScene("TownScene");
+                StartCoroutine("WaitToYouLose");
+                //menu.ChangeScene("TownScene");
             }
             if (unit == UnitActionSystem.Instance.GetSelectedUnit())
             {
@@ -97,6 +98,18 @@ public class UnitManager : MonoBehaviour
             }
             
         }
+    }
+
+    IEnumerator WaitToYouWin()
+    {
+        yield return new WaitForSeconds(0.5f);
+        EndCombatScreens.Instance.SetActiveYouWinScreen();
+    }
+
+    IEnumerator WaitToYouLose()
+    {
+        yield return new WaitForSeconds(0.5f);
+        EndCombatScreens.Instance.SetActiveYouLoseScreen();
     }
 
     public List<Unit> GetUnitList()
