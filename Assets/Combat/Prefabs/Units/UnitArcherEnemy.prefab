@@ -78,6 +78,12 @@ PrefabInstance:
       propertyPath: isEnemy
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6470236495852996830, guid: 954d4cfd4b313b748ab417e1806fe526,
+        type: 3}
+      propertyPath: ragdollPrefab
+      value: 
+      objectReference: {fileID: 5153786764167368596, guid: 78cd6bdb3258e33428279faa9006d963,
+        type: 3}
     - target: {fileID: 8733862169778039636, guid: 954d4cfd4b313b748ab417e1806fe526,
         type: 3}
       propertyPath: m_Color.g
