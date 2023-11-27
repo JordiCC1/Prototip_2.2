@@ -28,8 +28,8 @@ public class ResourceManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        totalFood = 100.0f;
-        totalMaterial = 100.0f;
+        totalFood = 50.0f;
+        totalMaterial = 50.0f;
         totalPeople = 10.0f;
         currentFood = totalFood;
         currentMaterial = totalMaterial;

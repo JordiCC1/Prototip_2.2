@@ -2875,7 +2875,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: House (Food -10, People -10)
+  m_Text: House (-10 F, -10 P) HP+
 --- !u!222 &397403253
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3659,7 +3659,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Road (Material -5)
+  m_Text: Road (-5 M)
 --- !u!222 &502847373
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4509,7 +4509,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Special (Material -20, People -5)
+  m_Text: Special (-20 M, -5 P) ATK+
 --- !u!222 &551913500
 CanvasRenderer:
   m_ObjectHideFlags: 0
