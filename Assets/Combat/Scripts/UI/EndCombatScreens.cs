@@ -47,6 +47,10 @@ public class EndCombatScreens : MonoBehaviour
 
     public void SetActiveYouLoseScreen()
     {
+        materialText.text = "Material: " + PlayerPrefs.GetFloat("material");
+        peopleText.text = "People: " + PlayerPrefs.GetFloat("people");
+        materialText.text = "Food: " + PlayerPrefs.GetFloat("food");
+
         YouLoseScreen.SetActive(true);
         StartCoroutine("WaitToChangeScene");
     }
