@@ -41,6 +41,13 @@ public class LevelScripting : MonoBehaviour
             SetActiveGameObjectList(hider2List, false);
             SetActiveGameObjectList(enemy2List, true);
         }
+
+        if (e.toGridPosition.z == 15)
+        {
+            hasShownFirstHider = true;
+            SetActiveGameObjectList(hider2List, false);
+            SetActiveGameObjectList(enemy2List, true);
+        }
     }
 
     private void SetActiveGameObjectList(List<GameObject> gameObjectList, bool isActive)
