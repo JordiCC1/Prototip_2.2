@@ -43002,7 +43002,7 @@ PrefabInstance:
     - target: {fileID: 5153786764167368597, guid: 5b3d57c1b94b2314480b830a0663e2e1,
         type: 3}
       propertyPath: ACTION_POINTS_MAX
-      value: 22
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7668120205752928586, guid: 5b3d57c1b94b2314480b830a0663e2e1,
         type: 3}

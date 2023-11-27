@@ -12,6 +12,30 @@ public class Menu : MonoBehaviour
         else changedScene = true;
         SceneManager.LoadScene(name);
     }
+
+    public void ChangeCombatScene()
+    {
+        int random = Random.Range(0, 2);
+        if (changedScene) { changedScene = false; }
+
+        switch (random) 
+        {
+            case 0:
+                SceneManager.LoadScene("CombatScene_1");
+                break; 
+            case 1:
+                SceneManager.LoadScene("CombatScene_2");
+                break;
+            case 2:
+                SceneManager.LoadScene("CombatScene_3");
+                break;
+            default:
+                SceneManager.LoadScene("CombatScene_1");
+                break;
+
+        }
+    }
+
     public void Exit()
     {
         Application.Quit();
