@@ -8,6 +8,8 @@ public class PlacementManager : MonoBehaviour
     public int width, height;
     Grid placementGrid;
     public ResourceManager resourceManager;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
 
     private Dictionary<Vector3Int, StructureModel> temporaryRoadobjects = new Dictionary<Vector3Int, StructureModel>();
     private Dictionary<Vector3Int, StructureModel> structureDictionary = new Dictionary<Vector3Int, StructureModel>();
@@ -40,6 +42,7 @@ public class PlacementManager : MonoBehaviour
             structureDictionary.Add(position, structure);
             DestroyNatureAt(position);
             Debug.Log(type);
+            audioSource.PlayOneShot(audioClip, 2);
         }
         else
         {

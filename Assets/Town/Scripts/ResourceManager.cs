@@ -59,8 +59,8 @@ public class ResourceManager : MonoBehaviour
         materialText.text = "Material: " + currentMaterial + "/" + totalMaterial;
         peopleText.text = "People: " + currentPeople + "/" + totalPeople;
 
-        attackText.text = attackBonus.ToString();
-        healthText.text = healthBonus.ToString();
+        attackText.text = "ATK: " + attackBonus;
+        healthText.text = "HP: " + healthBonus;
     }
 
     public void ChangeFood(float amount)
