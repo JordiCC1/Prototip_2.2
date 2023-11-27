@@ -13940,7 +13940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 432084575}
-  enemiesCount: 9
+  enemiesCount: 15
 --- !u!4 &600981253
 Transform:
   m_ObjectHideFlags: 0

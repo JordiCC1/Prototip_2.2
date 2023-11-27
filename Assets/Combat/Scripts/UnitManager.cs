@@ -64,6 +64,7 @@ public class UnitManager : MonoBehaviour
         {
             enemiesCount--;
             enemyUnitList.Remove(unit);
+            Debug.Log("dead");
             if(enemyUnitList.Count == 0 && enemiesCount == 0)
             {
                 float temp = PlayerPrefs.GetFloat("material");
