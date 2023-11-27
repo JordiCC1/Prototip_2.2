@@ -90,8 +90,8 @@ public class PlacementManager : MonoBehaviour
     private StructureModel CreateANewStructureModel(Vector3Int position, GameObject structurePrefab, CellType type)
     {
         if ((resourceManager.currentMaterial < 5 && type == CellType.Road) ||
-            (resourceManager.currentMaterial < 10 && type == CellType.Structure) ||
-            (resourceManager.currentMaterial < 20 && type == CellType.SpecialStructure))
+            ((resourceManager.currentFood < 10 || resourceManager.currentPeople < 10) && type == CellType.Structure) ||
+            ((resourceManager.currentMaterial < 20 || resourceManager.currentPeople < 5) && type == CellType.SpecialStructure))
         {
             return null;
         }

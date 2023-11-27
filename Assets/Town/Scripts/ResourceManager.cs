@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResourceManager : MonoBehaviour
 {
@@ -16,13 +17,19 @@ public class ResourceManager : MonoBehaviour
 
     public int attackBonus;
     public int healthBonus;
+
+    public Text foodText;
+    public Text materialText;
+    public Text peopleText;
+    public Text attackText;
+    public Text healthText;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        totalFood = 100.0f;
-        totalMaterial = 100.0f;
+        totalFood = 50.0f;
+        totalMaterial = 50.0f;
         totalPeople = 10.0f;
         currentFood = totalFood;
         currentMaterial = totalMaterial;
@@ -47,6 +54,13 @@ public class ResourceManager : MonoBehaviour
         currentPeople = Mathf.Clamp(PlayerPrefs.GetFloat("people"), 0, totalPeople);
         attackBonus = PlayerPrefs.GetInt("attackBonus");
         healthBonus = PlayerPrefs.GetInt("healthBonus");
+
+        foodText.text = "Food: " + currentFood + "/" + totalFood;
+        materialText.text = "Material: " + currentMaterial + "/" + totalMaterial;
+        peopleText.text = "People: " + currentPeople + "/" + totalPeople;
+
+        attackText.text = attackBonus.ToString();
+        healthText.text = healthBonus.ToString();
     }
 
     public void ChangeFood(float amount)
