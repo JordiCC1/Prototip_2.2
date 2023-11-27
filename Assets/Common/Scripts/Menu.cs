@@ -17,6 +17,7 @@ public class Menu : MonoBehaviour
     {
         int random = Random.Range(0, 2);
         if (changedScene) { changedScene = false; }
+        else changedScene = true;
 
         switch (random) 
         {

@@ -89,6 +89,18 @@ public class UnitManager : MonoBehaviour
 
             if (friendlyUnitList.Count == 0)
             {
+                float temp = PlayerPrefs.GetFloat("material");
+                temp += 15;
+                PlayerPrefs.SetFloat("material", temp);
+
+                temp = PlayerPrefs.GetFloat("people");
+                temp += 5;
+                PlayerPrefs.SetFloat("people", temp);
+
+                temp = PlayerPrefs.GetFloat("food");
+                temp += 10;
+                PlayerPrefs.SetFloat("food", temp);
+
                 StartCoroutine("WaitToYouLose");
                 //menu.ChangeScene("TownScene");
             }
